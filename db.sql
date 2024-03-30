@@ -1,11 +1,11 @@
 CREATE TABLE journal (
-    journal_id INT PRIMARY KEY AUTO_INCREMENT,
+    journal_id SERIAL PRIMARY KEY,
     name VARCHAR(255),
-    release_year DATE,
+    release_year DATE
 );
 
 CREATE TABLE articles (
-    article_id INT PRIMARY KEY AUTO_INCREMENT,
+    article_id SERIAL PRIMARY KEY,
     title VARCHAR(255),
     published_date DATE,
     content TEXT,
@@ -14,7 +14,7 @@ CREATE TABLE articles (
 );
 
 CREATE TABLE photos (
-    photo_id INT PRIMARY KEY AUTO_INCREMENT,
+    photo_id SERIAL PRIMARY KEY,
     title VARCHAR(255),
     article_id INT,
     FOREIGN KEY (article_id) REFERENCES articles(article_id)
